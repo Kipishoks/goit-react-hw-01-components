@@ -4,7 +4,7 @@ import {Stat, Title, StatList, Item, Label, Percentage} from "./Statistics.style
 export const Statistics = ({ title, status }) => {
     return (
         <Stat >
-        <Title>{title}</Title>
+        {title && <Title>{title }</Title>}
 
         <StatList>
           {status.map(({ id, label, percentage }) => {
@@ -23,7 +23,13 @@ export const Statistics = ({ title, status }) => {
 }
 
 Statistics.propTypes = {
-  title: PropTypes.string,
-  status: PropTypes.array
+  status: PropTypes.arrayOf(PropTypes.shape(
+    {
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired
+
+    }
+  ))
 }
     

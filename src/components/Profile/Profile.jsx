@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {ProfileWrap, Description, Avatar, Name, Tag, Location, Stats, ListItem} from './Profile.styled';
+import {ProfileWrap, Description, Avatar, Name, Tag, Location, Quantity, Stats, ListItem, Label} from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats: { followers, views, likes } })=> {
     return (
@@ -17,16 +17,16 @@ export const Profile = ({ username, tag, location, avatar, stats: { followers, v
 
   <Stats>
     <ListItem>
-      <span className="label">Followers</span>
-      <span className="quantity">{followers}</span>
+      <Label>Followers</Label>
+      <Quantity>{followers}</Quantity>
     </ListItem>
     <ListItem>
-      <span className="label">Views</span>
-      <span className="quantity">{views}</span>
+      <Label>Views</Label>
+      <Quantity>{views}</Quantity>
     </ListItem>
     <ListItem>
-      <span className="label">Likes</span>
-      <span className="quantity">{likes}</span>
+      <Label>Likes</Label>
+      <Quantity>{likes}</Quantity>
     </ListItem>
   </Stats>
 </ProfileWrap>
@@ -34,14 +34,14 @@ export const Profile = ({ username, tag, location, avatar, stats: { followers, v
 }
 
 Profile.propTypes = {
-    username: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    avatar: PropTypes.string,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
     stats: PropTypes.shape (
     {
-    followers: PropTypes.number,
-    views: PropTypes.number, 
-    likes: PropTypes.number
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired, 
+    likes: PropTypes.number.isRequired
 }) 
 }

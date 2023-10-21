@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from '@emotion/styled'
+// import styled from "styled-components";
 
 export const Item = styled.li`
 display: flex;
@@ -16,7 +17,8 @@ export const Status = styled.span`
   height: 15px;
   margin-right: 15px;
   border-radius: 50%;
-  background-color: ${props => (props.statusType ? 'green' : 'red')};`
+  background-color: ${props=>(props.statusType?'green':'red')};
+  `
 
 export const Avatar = styled.img`
   background-color: grey;
@@ -24,3 +26,8 @@ export const Avatar = styled.img`
   width: 125px;
   height: 125px;
   margin-right: 15px;`
+
+export const Name = styled.p`
+font-size: 18px;
+  font-weight: 18px;
+  margin-left: 20px;`
